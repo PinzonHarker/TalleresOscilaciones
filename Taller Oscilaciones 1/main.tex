@@ -1,0 +1,57 @@
+\documentclass[a4paper]{article}
+\usepackage{student}
+
+% Metadata
+\date{\today}
+\setterm{Semestre 2022-1}
+
+%-------------------------------%
+% Other details
+% TODO: Fill these
+%-------------------------------%
+\title{Taller: Semana 1}
+\setmembername{Andrés Harker, Cristian Pérez}  % Fill group member names
+
+%-------------------------------%
+% Add / Delete commands and packages
+% TODO: Add / Delete here as you need
+%-------------------------------%
+\usepackage{amsmath,amssymb,bm}
+\usepackage[spanish]{babel}
+
+% Custom your usual commands here. Renew these.
+\newcommand{\KL}{\mathrm{KL}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\T}{\top}
+\newcommand{\expdist}[2]{%
+        \normalfont{\textsc{Exp}}(#1, #2)%
+    }
+\newcommand{\expparam}{\bm \lambda}
+\newcommand{\Expparam}{\bm \Lambda}
+\newcommand{\natparam}{\bm \eta}
+\newcommand{\Natparam}{\bm H}
+\newcommand{\sufstat}{\bm u}
+
+% Main document
+\begin{document}
+    % Add header
+    \header{}
+
+    % Use `answer` environment to add solutions
+    % \begin{answer}[Question 1.1] for example starts an environment formatted
+    % for Question 1.1
+    \begin{answer}[Problema 1.]
+        La solución se muestra 
+
+        An equation with numbering:
+        \begin{equation}
+            \expdist{\sufstat}{\natparam}.
+        \end{equation}
+
+        An equation without numbering (notice the $*$):
+        \begin{equation*}
+            \expparam^{\T} \sufstat(x).
+        \end{equation*}
+    \end{answer}
+\end{document}
