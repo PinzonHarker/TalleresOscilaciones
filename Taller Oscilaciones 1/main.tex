@@ -42,16 +42,179 @@
     % \begin{answer}[Question 1.1] for example starts an environment formatted
     % for Question 1.1
     \begin{answer}[Problema 1.]
-        La solución se muestra 
-
-        An equation with numbering:
-        \begin{equation}
-            \expdist{\sufstat}{\natparam}.
-        \end{equation}
-
-        An equation without numbering (notice the $*$):
+    \begin{enumerate}
+        \item [a)] sea $x(t) = ACos(\omega t + \phi)$ entonces
         \begin{equation*}
-            \expparam^{\T} \sufstat(x).
+        \begin{split}
+             m \ddot{x} &= -mA\omega^2 Cos(\omega t + \phi)\\
+            &=  -m\frac{k}{m}A Cos(\omega t + \phi)\\
+            &=  -k A Cos(\omega t + \phi)\\
+             &=  -kx\\
+        \end{split}
         \end{equation*}
+            donde $\omega = \sqrt{k/m}$
+              \item [b)] sea $x(t) = BSin(\omega t) + CCos(\omega t)$ entonces
+        \begin{equation*}
+        \begin{split}
+             m \ddot{x} &= -mB\omega^2Sin(\omega t) - mC\omega^2Cos(\omega t)\\
+            &= -mB\frac{k}{m}Sin(\omega t) - mC\frac{k}{m}Cos(\omega t)\\
+            &= -BkSin(\omega t) - CmCos(\omega t)\\
+             &=  -kx\\
+        \end{split}
+        \end{equation*}
+            donde $\omega = \sqrt{k/m}$
+            
+            
+    \end{enumerate}
+    \end{answer}
+    
+    \begin{answer}[Problema 2.]
+        Haciendo la expansión del coseno de la suma, tenemos lo siguiente:
+        \begin{equation}
+            \begin{split}
+                A Cos(\omega t + \phi) = A(Cos(\omega t)Cos(\phi) - Sen(\omega t)Sen(\phi))\\
+                = [ACos(\phi)]Cos(\omega t) + [-ASen(\omega t]Sen(\omega t)
+            \end{split}
+        \end{equation}
+        Por tanto, nuestro $A$ y $B$ en la segunda ecuación son determinados por una constante $A=A'$ en la primera, luego la relación es:
+        \begin{equation}
+            A = [A'Cos(\phi)]\\
+            B = [-A'Sen(\omega t]
+        \end{equation}
+    
+    \end{answer}
+    
+     \begin{answer}[Problema 3.]
+     
+     \begin{enumerate}
+\item[a)] Si $x(t) = ACos(\omega t. + \phi)$ entonces:
+$$x(0) = ACos(\phi) = x_0$$ 
+$$v(0) = -A\omega Sin(\phi) = v_0$$
+Luego
+
+$$\frac{v_0}{x_0} = -\omega Tan(\phi)\hspace{0.35cm}\Rightarrow$$
+$$-\frac{v_0}{\omega x_0} =  Tan(\phi)\hspace{0.35cm}\Rightarrow$$
+$$ArcTan\left(-\frac{v_0}{\omega x_0}\right) =  \phi\hspace{0.35cm}\Rightarrow$$
+
+Y ademas 
+ 
+$$x_0^2 + \frac{v_0^2}{\omega^2} = A^2Cos^2(\phi) + A^2Sin^2(\phi)\hspace{0.35cm}\Rightarrow $$ 
+$$x_0^2 + \frac{v_0^2}{\omega^2} = A^2\hspace{0.35cm}\Rightarrow $$ 
+$$A = \sqrt{x_0^2 + \frac{v_0^2}{\omega^2}}$$   
+
+\item[b)] Si 
+$x(t) = BSin(\omega t) + CCos(\omega t) $ entonces:
+$$x(0) = C = x_0$$ 
+$$v(0) = B\omega = v_0$$
+Luego
+
+$$C = x_0$$
+$$B = \frac{v_0}{\omega}$$
+
+\end{enumerate}
+     \end{answer}
+         % Problema 4.
+    \begin{answer}[Problema 4.]
+        Dado que la fuerza $F=mg$ en algún momento es igual a $F_r=-kx$, existe un punto de equilibrio de tal manera que hay una fuerza equivalente $F_e = F_r - F_g$. Luego la fuerza resultante es equivalente a un sistema de resorte vertical (asumiendo rozamientos y fuerzas externas despreciables).
+    \end{answer}
+     
+    \begin{answer}[Problema 5.]
+    
+        Del esquema de fuerzas de la figura 1 obtenemos que:
+        
+        
+        \begin{equation*}
+            ml\ddot{\theta} = -mgSen(\theta)
+        \end{equation*}
+        Luego:
+\begin{equation*}
+     \ddot{\theta} + \frac{g}{l}Sen(\theta) = 0
+\end{equation*}
+y tomando $\theta$ pequeño  entonces:
+
+    \begin{equation*}
+     \ddot{\theta} + \frac{g}{l}\theta = 0
+\end{equation*}
+Cuya solucion es de la forma:
+    \begin{equation*}
+        \theta(t) = ACos(\omega t + \phi)
+    \end{equation*}
+    
+    Donde:
+    \begin{equation*}
+        \dot{\theta} = -\omega ASin(\omega t + \phi)
+    \end{equation*}
+    Por lo cual su energia cinetica queda como 
+    $$K = \frac{1}{2}ml^2\omega^2 A^2 Sin^2(\omega t+\phi )  $$
+    
+    Y ademas como la energia potencial graviatacional es de la forma $U = mgy$
+    entonces la energia potencial para el caso del pendulo quedara como:
+    
+    \begin{equation*}
+        U = mglCos(\theta)
+    \end{equation*}
+    \end{answer}
+    
+        % Problema 6.
+    \begin{answer}[Problema 6.]
+        Teniendo en cuenta el estado en equilibrio $m = 0.1 kg$ y $x = 0.1m$ con la siguiente ecuación:
+            \begin{equation}
+                mg = F_g = F_r = kx =\\
+                (0.1 kg)(9.8 m/s^2) = k (0.1m)\\
+                k = 9.8 N/m
+            \end{equation}
+        \begin{enumerate}
+            \item [a).] Dado que $\omega^2 = k/m$, encontramos que la ecuación diferencial del movimiento resulta:
+            $$d^2x/dt^2 + 98 x = 0$$
+            \item [b).] Dado el estado inicial, por la ecuación armónica:
+            $$x(t) = ACos(\omega t + \phi)$$
+            Tenemos $A = 6cm = 0.06 m$, $\phi = 0$ dado que parte de reposo y $v = 0$. Luego:
+            $$ x(t) = 0.06 Cos(7 \sqrt{2} t)$$
+            
+        \end{enumerate}
+    \end{answer}
+    
+        % Problema 7.
+    \begin{answer}[Problema 7.]
+    
+        Dado que el periodo de un pendulo es: 
+        \begin{equation*}
+            T = 2\pi \sqrt{\frac{l}{g}}
+        \end{equation*}
+        Entonces el tiempo requerido para que el pendulo de un metro complete una oscilacion es:
+        $$12 T_1 = 24\pi\sqrt{1/9.82} = 24.1seg$$
+        por tanto el tiempo que tarda el pendulo de longuitud desconocida en completar 11 oscilaciones es $24.1seg$ luego:
+        
+       $$11 T_2 = 24.1 = 22\pi \sqrt{\frac{l_2}{9.82}}$$
+       
+       entonces: 
+       $$l_2 = \left(\frac{24.1}{22\pi}\right)^2(9.82) = 1.2 m$$
+    \end{answer}
+    
+    % Problema 8.
+    \begin{answer}[8.]
+    Teniendo en cuenta la energía potencial de la gravedad $U = mgh$ y que la energía del resorte en el punto más alto es $U = 1/2 kx^2$. Igualamos la energía:
+    $$\omega^2 = k/m = gh/x^2 = (9.8)(0.49)/(0.245)^2$$
+    $$ \omega^2 = 80 $$
+    Dado que $\omega = 2\pi f$ tenemos:
+    $$ f = 8.94/2\pi = 1.423 Hz$$
+    o $T =  0.703 s$
+    
+    \end{answer}
+    
+    % Problema 9.
+    \begin{answer}[Problema 9.]
+    De la figura 2 vemos que si la masa esta en equilibrio:
+    $$ky = mg\hspace{0.35cm}\Rightarrow$$
+    $$k = \frac{mg}{y}\hspace{0.35cm}\Rightarrow$$
+    $$k = \frac{0.1(9.82) }{9.82} = 0.1\hspace{0.35cm}\Rightarrow$$
+    Y por tanto si adiciona una masa de $0.2kg$
+    entonces el resorte se elongara:
+    $$y = \frac{0.3(9,82)}{0.1} = 29.46m$$
+    \end{answer}
+    
+    % Problema 10.
+    \begin{answer}[10).]
+    
     \end{answer}
 \end{document}
