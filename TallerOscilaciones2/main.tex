@@ -3,14 +3,13 @@
 
 % Metadata
 \date{\today}
-\setmodule{}
 \setterm{Semestre 2022-1}
 
 %-------------------------------%
 % Other details
 % TODO: Fill these
 %-------------------------------%
-\title{Taller: Semana 1}
+\title{Taller: Semana 2}
 \setmembername{Andrés Harker, Cristian Pérez}  % Fill group member names
 
 %-------------------------------%
@@ -22,18 +21,211 @@
 
 % Custom your usual commands here. Renew these.
 \newcommand{\KL}{\mathrm{KL}}
-
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\T}{\top}
+\newcommand{\expdist}[2]{%
+        \normalfont{\textsc{Exp}}(#1, #2)%
+    }
+\newcommand{\expparam}{\bm \lambda}
+\newcommand{\Expparam}{\bm \Lambda}
+\newcommand{\natparam}{\bm \eta}
+\newcommand{\Natparam}{\bm H}
+\newcommand{\sufstat}{\bm u}
 
 % Main document
 \begin{document}
-% Add header
-\header{}
+    % Add header
+    \header{}
 
-% Use `answer` environment to add solutions
-% \begin{answer}[Question 1.1] for example starts an environment formatted
-% for Question 1.1
-\begin{answer}[Problema 1.]
+    % Use `answer` environment to add solutions
+    % \begin{answer}[Question 1.1] for example starts an environment formatted
+    % for Question 1.1
+    \begin{answer}[Problema 1.]
+    \begin{enumerate}
+       
+            
+            
+    \end{enumerate}
+    
+    
+    
+    
+    
+    
+    
 
-\end{answer}
+        
+    \end{answer}
+    
+     \begin{answer}[Problema 3.]
+     
+\begin{enumerate}
+\item[a)] Observando el sistema desde un marco inercial:
+\begin{enumerate}
+    
+    \item[1] De la figura 1 obtenemos que:
+        \begin{equation*}
+            ml\ddot{\theta} + maSen(\theta) = -mgSen(\theta) 
+        \end{equation*}
+        Luego:
+        \begin{equation*}
+             \ddot{\theta} + \frac{g+a}{l}Sen(\theta) = 0
+        \end{equation*}
+        y tomando $\theta$ pequeño  entonces:
+        
+            \begin{equation*}
+             \ddot{\theta} + \frac{g+a}{l}\theta = 0
+        \end{equation*}
+        \item[2]  si la aceleracion en figura 1 va en direccion contraria obtenemos que:
+        \begin{equation*}
+            ml\ddot{\theta}- maSen(\theta) = -mgSen(\theta) 
+        \end{equation*}
+        Luego:
+        \begin{equation*}
+             \ddot{\theta} + \frac{g-a}{l}Sen(\theta) = 0
+        \end{equation*}
+        y tomando $\theta$ pequeño  entonces:
+        
+            \begin{equation*}
+             \ddot{\theta} + \frac{g-a}{l}\theta = 0
+        \end{equation*}
+\end{enumerate}
+\item[b] Si el acensor se encuentra detenido entonces $a=0$ por lo que para cada caso la ecuacion de movimiento queda:
 
+    \begin{equation*}
+             \ddot{\theta} + \frac{g}{l}\theta = 0
+        \end{equation*}
+    Por lo que la frecuencia $f$ y el periodo $T$ son respectivamente:
+    $$f = \frac{1}{2\pi} \sqrt{\frac{g}{l}}$$
+    $$T = 2\pi \sqrt{\frac{l}{g}}$$
+    \item[c] si el acensor sube con un velocidad constante de $2m/s$ entonces $a = 0$ y el periodo sera el mismo de literal anterior:
+    $$T = 2\pi\sqrt{\frac{l}{g}}$$
+    \item[d] Si el acensor desciende con una aceleracion $a = 9.8m/s^2$ obtenemos que la ecuacion de movimiento queda:
+
+    \begin{equation*}
+             \ddot{\theta} + \frac{g-9.8}{l}\theta = 0
+        \end{equation*}
+    Por lo que la frecuencia $f$ y el periodo $T$ son respectivamente:
+    $$f = \frac{1}{2\pi} \sqrt{\frac{g -9.8}{l}}$$
+    $$T = 2\pi \sqrt{\frac{l}{g-9.8}}$$
+    Y teniendo en cuenta que $g \approx 9.8$ entonces:
+      $$f \rightarrow 0 $$
+    y el periodo quedara indefinido pues el pendulo no estara oscilando
+\end{enumerate}
+     \end{answer}
+    \begin{answer}[Problema 5.]
+        \begin{enumerate}
+            \item[a)] En dado que $F_0$ tiene unidades de fuerza y $m $ de masa entonces $\frac{F_0}{m}$ tiene unidades de aceleracion, y como $Cos(\omega t)$ es adimensional entonces para que la igualdad sea consistente $\gamma \dot x$ y $\omega_0^2 x$ deben tener unidades de aceleracion, pero como ademas $x$ tiene unidades de distancia y $\dot x$ unidades de velocidad entonces $\gamma$ y $\omega$ tendran unidades de frecuencia.
+            \item[b)] La representacion en el plano complejo esta justificada en que: (I) esta representacion no cambia la fisica del problema pues de esta representacion se puede extraer la parte que real que nos interesa, (II) es una funcion periodica que satisface la ecuacion diferencial de un movimiento armonico en el plano complejo.
+             \item[c)] Asumiendo una solucion de la forma:
+             $$z(t) = A\exp(i[\omega t + \phi]) \hspace{0.3cm} \Rightarrow$$
+             \begin{equation*}
+                 \begin{split}
+                     \frac{F_0}{m}\exp(i[\omega t]) &= -A\omega^2\exp(i[\omega t - \phi]) + iA\omega\exp(i[\omega t - \phi])\gamma + A \exp(i[\omega t - \phi])\omega_0^2\\
+                     &= (-A\omega^2 + iA\omega\gamma + A \omega_0^2)\exp(i[\omega t - \phi]) \hspace{0.3cm} \Rightarrow\\
+                 \end{split}
+             \end{equation*}
+             \begin{equation*}
+                 \begin{split}
+                     \frac{F_0}{m} \exp(i\phi)
+                     &= A(-\omega^2  + \omega_0^2) + iA\omega\gamma\hspace{0.3cm} \Rightarrow\\
+                 \end{split}
+             \end{equation*}
+             \begin{equation*}
+                 \begin{split}
+                     \frac{F_0}{m} Cos(\phi)
+                     = A(-\omega^2  + \omega_0^2) \hspace{0.3cm} 
+                 \end{split}
+             \end{equation*}
+               \begin{equation*}
+                 \begin{split}
+                     \frac{F_0}{m} Sin(\phi)
+                     &= A\omega\gamma\hspace{0.3cm} \Rightarrow\\
+                 \end{split}
+             \end{equation*}
+             \begin{equation*}
+                 \begin{split}
+                      \phi
+                     &=ArcTan\left(\frac{ \omega\gamma}{ (-\omega^2  + \omega_0^2)}\right)\hspace{0.3cm}\\
+                 \end{split}
+             \end{equation*}
+             \begin{equation*}
+                 \begin{split}
+                     \left(\frac{F_0}{m}\right)^2 Sin^2(\phi) +  \left(\frac{F_0}{m}\right)^2 Cos^2(\phi)  
+                     &= A^2(\omega\gamma)^2+ A^2(-\omega^2  + \omega_0^2)^2\hspace{0.3cm} \Rightarrow\\
+                 \end{split}
+             \end{equation*}
+              \begin{equation*}
+                 \begin{split}
+                     \left(\frac{F_0}{m}\right)^2
+                     &= A^2\left[(\omega\gamma)^2+ (-\omega^2  + \omega_0^2)^2\right]\hspace{0.3cm} \Rightarrow\\
+                 \end{split}
+             \end{equation*}
+             \begin{equation*}
+                 \begin{split}
+                     \frac{F_0/m}{\sqrt{\left[(\omega\gamma)^2+ (-\omega^2  + \omega_0^2)^2\right]}}
+                     &= A\hspace{0.3cm}\\
+                 \end{split}
+             \end{equation*}
+    \item[d)] Del anterior punto obtenemos que la solucion en el plano real queda de la forma:
+    $$x(t) = ACos(\omega t + \phi) =   \frac{F_0/m}{\sqrt{\left[(\omega\gamma)^2+ (-\omega^2  + \omega_0^2)^2\right]}}Cos\left(\omega t + ArcTan\left(\frac{ \omega\gamma}{ (-\omega^2  + \omega_0^2)}\right)\right)$$
+        \end{enumerate}
+    \end{answer}
+    
+    \begin{answer}[Problema 7]
+       
+        Dado que la ecuacion diferencial que descirbe el problema tiene la forma:
+        
+        \begin{equation*}
+            \ddot{s}(t) + \gamma\dot s(t) + \omega_0^2(t) = 0
+        \end{equation*}
+         \begin{enumerate}
+            \item [a] Y ademas como el sistema tiene un amortiguamiento critico $\gamma/2 =  \gamma_0$ la cual tiene como solucion:
+        $$s(t) = A\exp(-\gamma_0t)  - Bt\exp(-\gamma_0 t)$$
+        La cual satisface las siguientes condiciones iniciales:
+        $$s(0) = A\exp(0) = A = 0 $$
+        $$\dot s(0) = B\exp(0) -B(0)\gamma_0\exp(0) = B = v_0$$
+        Por tanto la ecuacion queda de la forma:
+        $$s(t) = v_0t\exp{(-\gamma_0t)}$$
+        \item[b)] Ahora si el sistema esta sobreamortiguado su funcion de posicion estara dada por: 
+        $$s(t) = A_1\exp{(-(\gamma/2 + \beta )t)}+ A_2\exp{(-(\gamma/2 + \beta )t)}$$
+        y su velocidad por:
+        $$\dot s(t) = A_1(-(\gamma/2 + \beta ))\exp{(-(\gamma/2 + \beta )t)} + A_2(-(\gamma/2 + \beta ))\exp{(-(\gamma/2 - \beta )t)}$$
+        con $\beta = \sqrt{\frac{\gamma^2}{4} - \omega_0^2}$ y condiciones iniciales $s(0) = s_0$ y $\dot s(0) = 0 $, luego:
+        
+        \begin{equation*}
+            s(0) = A_1\exp{(0)} + A_2\exp{(0)} = s_0
+        \end{equation*}
+        \begin{equation*}
+        \begin{split}
+            \dot s(0) &= A_1(-(\gamma/2 + \beta ))\exp{(0)} + A_2(-(\gamma/2 - \beta ))\exp{(0)}\\
+            &= A_1(-(\gamma/2 + \beta )) + A_2(-(\gamma/2 - \beta )) =0 \hspace{0.35cm} \Rightarrow\\
+        \end{split}
+        \end{equation*}
+        \begin{equation*}
+        \begin{split}
+         A_1 - A_2 =0 \hspace{0.35cm} \Rightarrow\\
+        \end{split}
+        \end{equation*}
+        \begin{equation*}
+        \begin{split}
+         A  = A_1 = A_2 \hspace{0.35cm} \\
+        \end{split}
+        \end{equation*}
+              y por tanto:
+       
+       $$A = \frac{s_0}{2}$$
+        \end{enumerate}
+          $$s(t) = \frac{s_0}{2}\exp{(-(\gamma/2 + \beta )t)}+ \frac{s_0}{2}\exp{(-(\gamma/2 + \beta )t)}$$
+ 
+       
+    \end{answer}
+    
+ 
+    
+    
+    
+    
+    
 \end{document}
