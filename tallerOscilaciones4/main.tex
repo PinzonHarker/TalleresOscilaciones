@@ -1,0 +1,188 @@
+\documentclass[a4paper]{article}
+\usepackage{student}
+
+% Metadata
+\date{\today}
+\setterm{Semestre 2022-1}
+
+%-------------------------------%
+% Other details
+% TODO: Fill these
+%-------------------------------%
+\title{Taller: Semana 1}
+\setmembername{Andrés Harker, Cristian Pérez}  % Fill group member names
+
+%-------------------------------%
+% Add / Delete commands and packages
+% TODO: Add / Delete here as you need
+%-------------------------------%
+\usepackage{amsmath,amssymb,bm}
+\usepackage[spanish]{babel}
+
+% Custom your usual commands here. Renew these.
+\newcommand{\KL}{\mathrm{KL}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\T}{\top}
+\newcommand{\expdist}[2]{%
+        \normalfont{\textsc{Exp}}(#1, #2)%
+    }
+\newcommand{\expparam}{\bm \lambda}
+\newcommand{\Expparam}{\bm \Lambda}
+\newcommand{\natparam}{\bm \eta}
+\newcommand{\Natparam}{\bm H}
+\newcommand{\sufstat}{\bm u}
+
+% Main document
+\begin{document}
+    % Add header
+    \header{}
+
+    % Use `answer` environment to add solutions
+    % \begin{answer}[Question 1.1] for example starts an environment formatted
+    % for Question 1.1
+    \begin{answer}[Problema pendulos acoplados.]
+    \begin{enumerate}
+        \item [1)] DESARROLLO FORMAL\\
+            De la diagrama de fuerza Figura 1, observamos que la segunda ley de Newton para las dos masas $m_1$ y $m_2$:
+            
+            $$F_{1x} = m\ddot{x_1} = k(x_2-x_1) - TSen(\theta_1)$$
+            $$F_{1y} = m\ddot{x_1} = TCos(\theta) - mg$$
+
+            $$F_{1x} = m\ddot{x_1} = -k(x_2-x_1) - TSen(\theta_2)$$
+            $$F_{1y} = m\ddot{x_1} = TCos(\theta) - mg$$
+            
+            Y tomando en cuenta angulos pequeños, entonces $y \rightarrow 0$ y $Cos(\theta) \approx 1$por lo que:
+                        $$0= T - mg \hspace{0.35cm} \Rightarrow$$
+        $$ T =  mg \hspace{0.35cm} \Rightarrow$$
+        Luego:
+        $$m\ddot{x_2} = -k(x_2-x1) - mgSen(\theta_1) =  m\ddot{x_2} = -k(x_2 - x_1) - m\frac{g}{l}x_2$$
+        De forma similar:
+        $$m\ddot{x_1} = k(x_2-x_1) + mgSen(\theta_2) =  m\ddot{x_1} = k(x_2 - x_1) - m\frac{g}{l}x_1$$
+        Por lo tanto:
+        \begin{equation}
+            \ddot{x_1} - \omega_s^2(x_2 - x_1) + \omega_g^2 x_1 = 0
+        \end{equation}
+        
+        \begin{equation}
+            \ddot{x_2} +  \omega_s^2(x_2-x1) + \omega_g^2 x_2 = 0
+        \end{equation}
+        con  $\omega_g^2 = g/l$ y $\omega_s^2 = k/m$\\
+        Proponiendo como soluciones la funciones:
+        \begin{equation}
+            x_1(t) = Ae^{i\omega t + \phi}
+        \end{equation}
+  \begin{equation}
+            x_2(t) = Be^{i\omega t + \phi}
+        \end{equation}
+     
+        Entonces:
+        
+         \begin{equation*}
+            \ddot{x_1} = -\omega^2Ae^{i\omega t + \phi}
+        \end{equation*}
+          \begin{equation*}
+            \ddot{x_2} = -\omega^2Be^{i\omega t + \phi}
+        \end{equation*}
+  
+    Y reemplazando $(3)$ y $(4)$  y sus derivadas en $(1)$ y $(2)$ obtenemos:
+    \begin{equation*}
+        \begin{split}
+          -\omega^2Ae^{i\omega t + \phi} - \omega_s^2( Be^{i\omega t + \phi} -Ae^{i\omega t + \phi}) + A\omega_g^2e^{i\omega t + \phi}=0
+        \end{split}
+    \end{equation*}
+       \begin{equation*}
+        \begin{split}
+          -\omega^2Ae^{i\omega t + \phi} + \omega_s^2( Be^{i\omega t + \phi} -Ae^{i\omega t + \phi}) + B\omega_g^2e^{i\omega t + \phi}= 0
+        \end{split}
+    \end{equation*}
+    Lo cual dividiendo por por $ e^{i\omega t + \phi}$ queda  un sistema de ecuacione equivalente a:
+    \begin{equation*}
+        \begin{split}
+          -\omega^2A- \omega_s^2(B-A) + A\omega_g^2=0
+        \end{split}
+    \end{equation*}
+       \begin{equation*}
+        \begin{split}
+          -\omega^2B + \omega_s^2( B -A) + B\omega_g^2= 0
+        \end{split}
+    \end{equation*}
+      En forma matricial:
+          \begin{equation*}
+               \begin{pmatrix}
+        \omega^2 - \omega_s^2 -\omega_g^2  & \omega_s^2\\
+         \omega_s^2& \omega^2 - \omega_s^2 -\omega_g^2\\
+    \end{pmatrix}
+    \begin{pmatrix}
+        A\\
+        B\\
+    \end{pmatrix} =  \begin{pmatrix}
+        0\\
+        0\\\end{pmatrix} 
+          \end{equation*}
+   
+    Por lo que para que el sistema tenga solucion no trivial el determinante de la matriz tendra que ser igual a $0$ y por tanto:
+    $$(\omega^2 - \omega_s^2 -\omega_g^2)^2 - \omega_s^4 = 0 \hspace{0.35cm} \Rightarrow$$
+    $$(\omega^2 - \omega_s^2 -\omega_g^2)  = \pm\omega_s^2  \hspace{0.3cm} \Rightarrow$$
+    De lo cual obtemenos que los modos normales son:
+    \begin{equation}
+        \omega = \omega_s
+    \end{equation}
+     \begin{equation}
+        \omega = \sqrt{ 2\omega_s^2 +\omega_g^2}
+    \end{equation}
+     Ahora sumando y restando  $(1)$ y $(2)$
+       \begin{equation}
+        \begin{split}
+            \ddot{x_1} + \ddot{x_2}  + \omega_g^2 x_1 +\omega_g^2 x_2  = \ddot{x_1} + \ddot{x_2} + \omega_g^2(x_1 + x_2) = 0
+        \end{split}
+    \end{equation}
+      \begin{equation}
+        \begin{split}
+            \ddot{x_2} - \ddot{x_1} + 2\omega_s^2(x_2 - x_1) - \omega_g^2 x_1 +\omega_g^2 x_2  =\ddot{x_2} - \ddot{x_1} + 2\omega_s^2(x_2 - x_1) + \omega_g^2 (x_2 -x_1)  = 0
+        \end{split}
+    \end{equation}
+    Y definiendo $z_1 = x_1 + x_2 $ y $z_2 = x_2 -x_1$y reemlazando en la ecuaciones anteriores obtenemos las ecuaciones:
+     \begin{equation}
+        \begin{split}
+           \ddot{z_1} + \omega_g^2z_1 = 0
+        \end{split}
+    \end{equation}
+      \begin{equation}
+        \begin{split}
+            \ddot{z_1} + (2\omega_s^2 + \omega_g^2) (x_2 -x_1)  = 0
+        \end{split}
+    \end{equation}
+    Las cuales tiene como solucion en los reales:
+    \begin{equation}
+        z_1 = DCos(\omega_g t + \phi_1)
+    \end{equation}
+    \begin{equation}
+        z_2 = ECos(\sqrt{2\omega_s^2 + \omega_g^2} t + \phi_2)
+    \end{equation}
+    
+    \item[2] Dada las condiciones iniciales $x_1(0) = A$, $\dot{x_1}(0) =0  $, $x_2(0) = 0$ y $\dot{x}_2(0)=0$, la cuales en terminos de las variable $z_1$ y $z_2$ quedaran: 
+    $z_1(0) = A$, $\dot{z}_1(0) = 0$, $z_2(0) = -A$ y $\dot{z}_2(0) = 0$, aplicando estas condiciones iniciales a las ecuaciones $(11)$ y $(12)$ entonces:
+    
+        $$\phi_1 = ArcTan(0) = 0$$
+        $$D =\sqrt{A^2} = A$$
+        $$\phi_2 = ArcTan(0) = 0$$
+        $$E = \sqrt{A^2} = A$$
+        
+        De lo cual obtenemos que:
+        $$ z_1 = ACos(\omega_g t)$$
+        $$z_2 = ACos(\sqrt{2\omega_s^2 + \omega_g^2})t$$
+        
+        Y 
+        $$x_1 = z_1 - z_2 = A( Cos(\omega_g t) -Cos(\sqrt{2\omega_s^2 + \omega_g^2}))$$
+        $$x_2 = z_1 + z_2 = A( Cos(\omega_g t) + Cos(\sqrt{2\omega_s^2 + \omega_g^2}))$$
+        \end{enumerate}
+   
+    \end{answer}
+    
+ 
+    
+    
+
+    
+\end{document}
